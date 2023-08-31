@@ -1,4 +1,5 @@
 <!-- ============================================================== -->
+<!-- Left Sidebar - Team  -->
 <!-- Left Sidebar - style you can find in sidebar.scss  -->
 <!-- ============================================================== -->
 <aside class="left-sidebar" id="js-trigger-nav-team">
