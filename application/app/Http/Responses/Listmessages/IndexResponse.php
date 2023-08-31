@@ -116,7 +116,7 @@ class IndexResponse implements Responsable {
             $jsondata['dom_html'][] = [
                 'selector' => '.active-bread-crumb',
                 'action' => 'replace',
-                'value' => strtoupper(__('lang.listmessagess')),
+                'value' => strtoupper(__('lang.listmessages')),
             ];
 
             //for embedded request -change active tabs menu

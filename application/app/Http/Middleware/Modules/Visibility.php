@@ -378,7 +378,7 @@ class Visibility {
 
         //team
         if (auth()->user()->is_team) {
-            if (auth()->user()->role->role_listmessages >= 1) {
+            if (auth()->user()->role->role_listmessage >= 1) {
                 config(['visibility.modules.listmessage' => true]);
             }
         }

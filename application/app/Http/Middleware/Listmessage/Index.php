@@ -47,9 +47,9 @@ class Index {
 
         //admin user permission
         if (auth()->user()->is_team) {
-            if (auth()->user()->role->role_listmessages >= 1) {
+            if (auth()->user()->role->role_listmessage >= 1) {
                 //limit to own listmessage, if applicable
-                if (auth()->user()->role->role_listmessages_scope == 'own' || request()->segment(2) == 'my') {
+                if (auth()->user()->role->role_listmessage_scope == 'own' || request()->segment(2) == 'my') {
                     request()->merge([
                         'filter_timer_creatorid' => auth()->id(),
                     ]);
@@ -62,7 +62,7 @@ class Index {
         if (auth()->user()->is_client) {
             if (request()->ajax() && request()->filled('listmessageresource_id')) {
                 if ($project = \App\Models\Project::Where('project_id', request('listmessageresource_id'))->first()) {
-                    if ($project->clientperm_listmessages_view == 'yes') {
+                    if ($project->clientperm_listmessage_view == 'yes') {
                         //goup by tasks
                         request()->merge([
                             'filter_grouping' => 'task',
@@ -101,13 +101,13 @@ class Index {
 
         //default show some table columns
         config([
-            'visibility.listmessages_col_related' => true,
-            'visibility.listmessages_col_action' => true,
+            'visibility.listmessage_col_related' => true,
+            'visibility.listmessage_col_action' => true,
             'visibility.filter_panel_resource' => true,
         ]);
 
         //permissions -viewing
-        if (auth()->user()->role->role_listmessages >= 1) {
+        if (auth()->user()->role->role_listmessage >= 1) {
             if (auth()->user()->is_team) {
                 config([
                     //visibility
@@ -120,9 +120,9 @@ class Index {
                 config([
                     //visibility
                     'visibility.list_page_actions_search' => true,
-                    'visibility.listmessages_col_client' => false,
-                    'visibility.listmessages_col_action' => false,
-                    'visibility.listmessages_grouped_by_users' => true,
+                    'visibility.listmessage_col_client' => false,
+                    'visibility.listmessage_col_action' => false,
+                    'visibility.listmessage_grouped_by_users' => true,
                 ]);
             }
 
@@ -130,29 +130,29 @@ class Index {
             if (request('filter_grouping') == 'task') {
                 config([
                     //visibility
-                    'visibility.listmessages_grouped_by_users' => true,
+                    'visibility.listmessage_grouped_by_users' => true,
                 ]);
             }
         }
 
-        if (auth()->user()->role->role_listmessages == 1) {
+        if (auth()->user()->role->role_listmessage == 1) {
             config([
-                'visibility.listmessages_col_action' => false,
+                'visibility.listmessage_col_action' => false,
             ]);
 
         }
 
         //permissions -adding
-        if (auth()->user()->role->role_listmessages >= 2) {
+        if (auth()->user()->role->role_listmessage >= 2) {
             config([
                 //visibility
                 'visibility.action_buttons_edit' => true,
-                'visibility.listmessages_col_checkboxes' => true,
+                'visibility.listmessage_col_checkboxes' => true,
             ]);
         }
 
         //permissions -deleting
-        if (auth()->user()->role->role_listmessages >= 3) {
+        if (auth()->user()->role->role_listmessage >= 3) {
             config([
                 //visibility
                 'visibility.action_buttons_delete' => true,
@@ -161,7 +161,7 @@ class Index {
             if (request('filter_grouping') == 'task' || request('filter_grouping') == 'user') {
                 config([
                     //visibility
-                    'visibility.listmessages_disable_actions' => true,
+                    'visibility.listmessage_disable_actions' => true,
                     'visibility.action_buttons_delete' => false,
                 ]);
             }
@@ -171,7 +171,7 @@ class Index {
         if (request('listmessageresource_type') != '') {
             config([
                 //visibility
-                'visibility.listmessages_col_related' => false,
+                'visibility.listmessage_col_related' => false,
                 'visibility.filter_panel_resource' => false,
             ]);
         }
