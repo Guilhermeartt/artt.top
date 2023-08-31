@@ -3674,16 +3674,6 @@ When click on sidebar toggler and also for tablet
   .mini-sidebar.show-sidebar .left-sidebar,
   .mini-sidebar.show-sidebar .sidebar-footer {
     left: 0px !important; } 
-
- /**-------------------------------------------------------
-* tab body embedded content
-* -------------------------------------------------------*/
-.tab-body-embedded .table-stats-cards {
-  flex-direction: column !important;}
-.project .tab-body-embedded {
-  padding-top: 10px !important;
-  padding-left: 60px !important;
-  padding-right: 60px !important; }
 }
 /*============================================================== 
  For all pages 
