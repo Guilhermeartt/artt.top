@@ -393,6 +393,33 @@
                 </li>
                 @endif
 
+                <!--msg-whatsapp-->
+                @if(auth()->user()->is_team)
+                <li data-modular-id="main_menu_team_team"
+                    class="sidenav-menu-item {{ $page['mainmenu_settings'] ?? '' }}">
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                        <i class="ti-panel"></i>
+                        <span class="hide-menu">{{ cleanLang(__('lang.whatsapp')) }}
+                        </span>
+                    </a>
+                    <ul aria-expanded="false" class="position-top collapse">
+                        @if(config('visibility.modules.createmessage'))
+                        <li class="sidenav-submenu mainmenu_createmessage {{ $page['submenu_createmessage'] ?? '' }}" id="submenu_createmessage">
+                            <a href="/createmessage"
+                                class="{{ $page['submenu_createmessage'] ?? '' }}">{{ cleanLang(__('lang.createmessage')) }}</a>
+                        </li>
+                        @endif
+                        @if(config('visibility.modules.listmessage'))
+                        <li class="sidenav-submenu mainmenu_listmessage {{ $page['submenu_listmessage'] ?? '' }}"
+                            id="submenu_listmessage">
+                            <a href="/listmessage"
+                                class="{{ $page['submenu_listmessage'] ?? '' }}">{{ cleanLang(__('lang.listmessage')) }}</a>
+                        </li>
+                        @endif
+                    </ul>
+                </li>
+                @endif
+
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

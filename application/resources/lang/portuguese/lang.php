@@ -2059,6 +2059,8 @@ return [
 'filter_has_been_applied' => "um filtro foi aplicado",
 'filtered_results' => "Resultados filtrados",
 'clear_filter' => "Filtro limpo",
-
+'whatsapp' => "Whatsapp",
+'createmessage' => "Criar Mensagem",
+'listmessage' => "Lista de Mensagens",
 
 ];
