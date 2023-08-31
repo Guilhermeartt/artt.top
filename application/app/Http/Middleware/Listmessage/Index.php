@@ -17,7 +17,7 @@ class Index {
 
     /**
      * This middleware does the following
-     *   2. checks users permissions to [view] listmessages
+     *   2. checks users permissions to [view] listmessage
      *   3. modifies the request object as needed
      *
      * @param  \Illuminate\Http\Request  $request
@@ -31,13 +31,13 @@ class Index {
 
         //embedded request: limit by supplied resource data
         if (request()->filled('listmessageresource_type') && request()->filled('listmessageresource_id')) {
-            //project listmessages
+            //project listmessage
             if (request('listmessageresource_type') == 'project') {
                 request()->merge([
                     'filter_timer_projectid' => request('listmessageresource_id'),
                 ]);
             }
-            //client listmessages
+            //client listmessage
             if (request('listmessageresource_type') == 'client') {
                 request()->merge([
                     'filter_timer_clientid' => request('listmessageresource_id'),
@@ -48,7 +48,7 @@ class Index {
         //admin user permission
         if (auth()->user()->is_team) {
             if (auth()->user()->role->role_listmessages >= 1) {
-                //limit to own listmessages, if applicable
+                //limit to own listmessage, if applicable
                 if (auth()->user()->role->role_listmessages_scope == 'own' || request()->segment(2) == 'my') {
                     request()->merge([
                         'filter_timer_creatorid' => auth()->id(),
@@ -74,7 +74,7 @@ class Index {
         }
 
         //permission denied
-        Log::error("permission denied", ['process' => '[permissions][listmessages][index]', 'ref' => config('app.debug_ref'), 'function' => __function__, 'file' => basename(__FILE__), 'line' => __line__, 'path' => __file__]);
+        Log::error("permission denied", ['process' => '[permissions][listmessage][index]', 'ref' => config('app.debug_ref'), 'function' => __function__, 'file' => basename(__FILE__), 'line' => __line__, 'path' => __file__]);
         abort(403);
     }
 
@@ -126,7 +126,7 @@ class Index {
                 ]);
             }
 
-            //disable whe grouping listmessages
+            //disable whe grouping listmessage
             if (request('filter_grouping') == 'task') {
                 config([
                     //visibility
@@ -157,7 +157,7 @@ class Index {
                 //visibility
                 'visibility.action_buttons_delete' => true,
             ]);
-            //disable whe grouping listmessages
+            //disable whe grouping listmessage
             if (request('filter_grouping') == 'task' || request('filter_grouping') == 'user') {
                 config([
                     //visibility

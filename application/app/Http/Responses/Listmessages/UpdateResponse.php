@@ -1,13 +1,13 @@
 <?php
 
 /** --------------------------------------------------------------------------------
- * This classes renders the response for the [update] process for the listmessages
+ * This classes renders the response for the [update] process for the listmessage
  * controller
  * @package    Grow CRM
  * @author     NextLoop
  *----------------------------------------------------------------------------------*/
 
-namespace App\Http\Responses\Listmessages;
+namespace App\Http\Responses\listmessage;
 use Illuminate\Contracts\Support\Responsable;
 
 class UpdateResponse implements Responsable {
@@ -19,7 +19,7 @@ class UpdateResponse implements Responsable {
     }
 
     /**
-     * render the view for listmessages
+     * render the view for listmessage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -32,9 +32,9 @@ class UpdateResponse implements Responsable {
         }
 
         //replace the row of this record
-        $html = view('pages/listmessages/components/table/ajax', compact('listmessages'))->render();
+        $html = view('pages/listmessage/components/table/ajax', compact('listmessage'))->render();
         $jsondata['dom_html'][] = array(
-            'selector' => "#listmessage_" . $listmessages->first()->timer_id,
+            'selector' => "#listmessage_" . $listmessage->first()->timer_id,
             'action' => 'replace-with',
             'value' => $html);
 

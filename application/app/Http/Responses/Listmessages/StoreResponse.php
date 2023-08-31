@@ -1,13 +1,13 @@
 <?php
 
 /** --------------------------------------------------------------------------------
- * This classes renders the response for the [update] process for the listmessages
+ * This classes renders the response for the [update] process for the listmessage
  * controller
  * @package    Grow CRM
  * @author     NextLoop
  *----------------------------------------------------------------------------------*/
 
-namespace App\Http\Responses\Listmessages;
+namespace App\Http\Responses\listmessage;
 use Illuminate\Contracts\Support\Responsable;
 
 class StoreResponse implements Responsable {
@@ -19,7 +19,7 @@ class StoreResponse implements Responsable {
     }
 
     /**
-     * render the view for listmessages
+     * render the view for listmessage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -33,16 +33,16 @@ class StoreResponse implements Responsable {
 
         //prepend content on top of list or show full table
         if ($count == 1) {
-            $html = view('pages/listmessages/components/table/table', compact('listmessages'))->render();
+            $html = view('pages/listmessage/components/table/table', compact('listmessage'))->render();
             $jsondata['dom_html'][] = array(
-                'selector' => '#listmessages-table-wrapper',
+                'selector' => '#listmessage-table-wrapper',
                 'action' => 'replace',
                 'value' => $html);
         } else {
             //prepend content on top of list
-            $html = view('pages/listmessages/components/table/ajax', compact('listmessages'))->render();
+            $html = view('pages/listmessage/components/table/ajax', compact('listmessage'))->render();
             $jsondata['dom_html'][] = array(
-                'selector' => '#listmessages-td-container',
+                'selector' => '#listmessage-td-container',
                 'action' => 'prepend',
                 'value' => $html);
         }

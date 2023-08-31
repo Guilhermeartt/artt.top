@@ -1,13 +1,13 @@
 <?php
 
 /** --------------------------------------------------------------------------------
- * This classes renders the response for the [index] process for the listmessages
+ * This classes renders the response for the [index] process for the listmessage
  * controller
  * @package    Grow CRM
  * @author     NextLoop
  *----------------------------------------------------------------------------------*/
 
-namespace App\Http\Responses\Listmessages;
+namespace App\Http\Responses\listmessage;
 use Illuminate\Contracts\Support\Responsable;
 
 class IndexResponse implements Responsable {
@@ -19,7 +19,7 @@ class IndexResponse implements Responsable {
     }
 
     /**
-     * render the view for listmessages
+     * render the view for listmessage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -39,36 +39,36 @@ class IndexResponse implements Responsable {
 
             //typically from the loadmore button
             case 'load':
-                $template = 'pages/listmessages/components/table/ajax';
-                $dom_container = '#listmessages-td-container';
+                $template = 'pages/listmessage/components/table/ajax';
+                $dom_container = '#listmessage-td-container';
                 $dom_action = 'append';
                 break;
 
             //from the sorting links
             case 'sort':
-                $template = 'pages/listmessages/components/table/ajax';
-                $dom_container = '#listmessages-td-container';
+                $template = 'pages/listmessage/components/table/ajax';
+                $dom_container = '#listmessage-td-container';
                 $dom_action = 'replace';
                 break;
 
             //from search box or filter panel
             case 'search':
-                $template = 'pages/listmessages/components/table/table';
-                $dom_container = '#listmessages-table-wrapper';
+                $template = 'pages/listmessage/components/table/table';
+                $dom_container = '#listmessage-table-wrapper';
                 $dom_action = 'replace';
                 break;
 
             //template and dom - for ajax initial loading
             default:
-                $template = 'pages/listmessages/tabswrapper';
+                $template = 'pages/listmessage/tabswrapper';
                 $dom_container = '#embed-content-container';
                 $dom_action = 'replace';
                 break;
             }
 
             //load more button - change the page number and determine buttons visibility
-            if ($listmessages->currentPage() < $listmessages->lastPage()) {
-                $url = loadMoreButtonUrl($listmessages->currentPage() + 1, request('source'));
+            if ($listmessage->currentPage() < $listmessage->lastPage()) {
+                $url = loadMoreButtonUrl($listmessage->currentPage() + 1, request('source'));
                 $jsondata['dom_attributes'][] = array(
                     'selector' => '#load-more-button',
                     'attr' => 'data-url',
@@ -93,7 +93,7 @@ class IndexResponse implements Responsable {
             }
 
             //render the view and save to json
-            $html = view($template, compact('page', 'listmessages'))->render();
+            $html = view($template, compact('page', 'listmessage'))->render();
             $jsondata['dom_html'][] = array(
                 'selector' => $dom_container,
                 'action' => $dom_action,
@@ -143,10 +143,10 @@ class IndexResponse implements Responsable {
 
         } else {
             //standard view
-            $page['url'] = loadMoreButtonUrl($listmessages->currentPage() + 1, request('source'));
-            $page['loading_target'] = 'listmessages-td-container';
-            $page['visibility_show_load_more'] = ($listmessages->currentPage() < $listmessages->lastPage()) ? true : false;
-            return view('pages/listmessages/wrapper', compact('page', 'listmessages'))->render();
+            $page['url'] = loadMoreButtonUrl($listmessage->currentPage() + 1, request('source'));
+            $page['loading_target'] = 'listmessage-td-container';
+            $page['visibility_show_load_more'] = ($listmessage->currentPage() < $listmessage->lastPage()) ? true : false;
+            return view('pages/listmessage/wrapper', compact('page', 'listmessage'))->render();
         }
 
     }

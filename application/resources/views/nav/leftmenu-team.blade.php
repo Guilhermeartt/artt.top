@@ -394,7 +394,7 @@
                 @endif
 
                 <!--msg-whatsapp-->
-                @if(auth()->user()->is_team)
+                @if(config('visibility.modules.whatsapp'))
                 <li data-modular-id="main_menu_team_team"
                     class="sidenav-menu-item {{ $page['mainmenu_settings'] ?? '' }}">
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
@@ -413,7 +413,7 @@
                         <li class="sidenav-submenu mainmenu_listmessage {{ $page['submenu_listmessage'] ?? '' }}"
                             id="submenu_listmessage">
                             <a href="/listmessage"
-                                class="{{ $page['submenu_listmessage'] ?? '' }}">{{ cleanLang(__('lang.listmessages')) }}</a>
+                                class="{{ $page['submenu_listmessage'] ?? '' }}">{{ cleanLang(__('lang.listmessage')) }}</a>
                         </li>
                         @endif
                     </ul>

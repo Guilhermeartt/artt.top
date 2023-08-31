@@ -1,13 +1,13 @@
 <?php
 
 /** --------------------------------------------------------------------------------
- * This classes renders the response for the [destroy] process for the listmessages
+ * This classes renders the response for the [destroy] process for the listmessage
  * controller
  * @package    Grow CRM
  * @author     NextLoop
  *----------------------------------------------------------------------------------*/
 
-namespace App\Http\Responses\Listmessages;
+namespace App\Http\Responses\listmessage;
 use Illuminate\Contracts\Support\Responsable;
 
 class DestroyResponse implements Responsable {

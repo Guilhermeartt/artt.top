@@ -1,13 +1,13 @@
 <?php
 
 /** --------------------------------------------------------------------------------
- * This classes renders the response for the [edit] process for the listmessages
+ * This classes renders the response for the [edit] process for the listmessage
  * controller
  * @package    Grow CRM
  * @author     NextLoop
  *----------------------------------------------------------------------------------*/
 
-namespace App\Http\Responses\listmessages;
+namespace App\Http\Responses\listmessage;
 use Illuminate\Contracts\Support\Responsable;
 
 class CreateResponse implements Responsable {
@@ -19,7 +19,7 @@ class CreateResponse implements Responsable {
     }
 
     /**
-     * render the view for listmessages
+     * render the view for listmessage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -27,7 +27,7 @@ class CreateResponse implements Responsable {
     public function toResponse($request) {
 
         //render the form
-        $html = view('pages/listmessages/components/modals/record-time')->render();
+        $html = view('pages/listmessage/components/modals/record-time')->render();
         $jsondata['dom_html'][] = array(
             'selector' => '#commonModalBody',
             'action' => 'replace',

@@ -69,7 +69,7 @@ class Destroy {
             }
         } else {
             //no items were passed with this request
-            Log::error("no items were sent with this request", ['process' => '[permissions][listmessages][change-category]', 'ref' => config('app.debug_ref'), 'function' => __function__, 'file' => basename(__FILE__), 'line' => __line__, 'path' => __file__, 'listmessage id' => $listmessage_id ?? '']);
+            Log::error("no items were sent with this request", ['process' => '[permissions][listmessage][change-category]', 'ref' => config('app.debug_ref'), 'function' => __function__, 'file' => basename(__FILE__), 'line' => __line__, 'path' => __file__, 'listmessage id' => $listmessage_id ?? '']);
             abort(409);
         }
 
