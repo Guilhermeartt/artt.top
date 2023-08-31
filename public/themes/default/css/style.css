@@ -43,7 +43,7 @@ html {
   -moz-osx-font-smoothing: grayscale; }
 
 a {
-  color: #20aee3; }
+  color: #07303f; }
 
 a:hover,
 a:focus {
@@ -52,7 +52,7 @@ a:focus {
 a.link {
   color: #455a64; }
   a.link:hover, a.link:focus {
-    color: #20aee3; }
+    color: #07303f; }
 
 .img-responsive {
   width: 100%;
