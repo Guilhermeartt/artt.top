@@ -8494,15 +8494,15 @@ widget-chart-page product review
  * BODY
  * --------------------------------------------------------*/
 html {
-  background: #f6f9fa; }
+  background: #112a39; }
   html body {
-    background: #f6f9fa; }
+    background: #112a39; }
     html body.loggedin {
-      background: #f6f9fa; }
+      background: #112a39; }
       html body.loggedin .preloader {
-        background-color: #f6f9fa; }
+        background-color: #112a39; }
     html body .page-wrapper {
-      background: #f6f9fa; }
+      background: #112a39; }
 
 /* ----------------------------------------------------------
  * PRELOADER
