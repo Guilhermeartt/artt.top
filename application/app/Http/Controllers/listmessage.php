@@ -277,7 +277,7 @@ class Listmessage extends Controller {
         //common settings
         $page = [
             'crumbs' => [
-                __('lang.listmessages'),
+                __('lang.listmessage'),
             ],
             'crumbs_special_class' => 'list-pages-crumbs',
             'page' => 'listmessage',
@@ -307,8 +307,8 @@ class Listmessage extends Controller {
         //projects list page
         if ($section == 'listmessage') {
             $page += [
-                'meta_title' => __('lang.listmessages'),
-                'heading' => __('lang.listmessages'),
+                'meta_title' => __('lang.listmessage'),
+                'heading' => __('lang.listmessage'),
 
             ];
             if (request('source') == 'ext') {

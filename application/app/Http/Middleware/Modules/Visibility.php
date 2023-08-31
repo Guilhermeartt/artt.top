@@ -52,6 +52,7 @@ class Visibility {
         $this->viewContracts();
         $this->viewSpaces();
         $this->viewMessages();
+        $this->viewWhatsapp();
 
         //done
         return $next($request);
@@ -363,7 +364,7 @@ class Visibility {
     public function viewCreatemessage() {
 
         //createmessage
-        if (auth()->user()->is_createmessage) {
+        if (auth()->user()->is_team) {
             if (auth()->user()->role->role_createmessage >= 1) {
                 config(['visibility.modules.createmessage' => true]);
             }
@@ -377,8 +378,21 @@ class Visibility {
 
         //team
         if (auth()->user()->is_team) {
-            if (auth()->user()->role->role_listmessage >= 1) {
+            if (auth()->user()->role->role_listmessages >= 1) {
                 config(['visibility.modules.listmessage' => true]);
+            }
+        }
+    }
+
+        /**
+     * visibility of the whatsapp feature [whatsapp]
+     */
+    public function viewWhatsapp() {
+
+        //team
+        if (auth()->user()->is_team) {
+            if (auth()->user()->role->role_whatsapp >= 1) {
+                config(['visibility.modules.whatsapp' => true]);
             }
         }
     }

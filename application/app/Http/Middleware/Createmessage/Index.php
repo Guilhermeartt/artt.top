@@ -47,9 +47,9 @@ class Index {
 
         //admin user permission
         if (auth()->user()->is_team) {
-            if (auth()->user()->role->role_createmessages >= 1) {
+            if (auth()->user()->role->role_createmessage >= 1) {
                 //limit to own createmessages, if applicable
-                if (auth()->user()->role->role_createmessages_scope == 'own' || request()->segment(2) == 'my') {
+                if (auth()->user()->role->role_createmessage_scope == 'own' || request()->segment(2) == 'my') {
                     request()->merge([
                         'filter_timer_creatorid' => auth()->id(),
                     ]);
@@ -107,7 +107,7 @@ class Index {
         ]);
 
         //permissions -viewing
-        if (auth()->user()->role->role_createmessages >= 1) {
+        if (auth()->user()->role->role_createmessage >= 1) {
             if (auth()->user()->is_team) {
                 config([
                     //visibility
@@ -135,7 +135,7 @@ class Index {
             }
         }
 
-        if (auth()->user()->role->role_createmessages == 1) {
+        if (auth()->user()->role->role_createmessage == 1) {
             config([
                 'visibility.createmessages_col_action' => false,
             ]);
@@ -143,7 +143,7 @@ class Index {
         }
 
         //permissions -adding
-        if (auth()->user()->role->role_createmessages >= 2) {
+        if (auth()->user()->role->role_createmessage >= 2) {
             config([
                 //visibility
                 'visibility.action_buttons_edit' => true,
@@ -152,7 +152,7 @@ class Index {
         }
 
         //permissions -deleting
-        if (auth()->user()->role->role_createmessages >= 3) {
+        if (auth()->user()->role->role_createmessage >= 3) {
             config([
                 //visibility
                 'visibility.action_buttons_delete' => true,

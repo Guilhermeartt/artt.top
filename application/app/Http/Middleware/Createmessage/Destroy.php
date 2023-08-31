@@ -51,9 +51,9 @@ class Destroy {
                 }
                 //permission on each one
                 if (auth()->user()->is_team) {
-                    if (auth()->user()->role->role_createmessages >= 3) {
+                    if (auth()->user()->role->role_createmessage >= 3) {
                         //own scope - permissions
-                        if (auth()->user()->role->role_createmessages_scope == 'own') {
+                        if (auth()->user()->role->role_createmessage_scope == 'own') {
                             if ($createmessage->timer_creatorid != auth()->id()) {
                                 abort(403, __('lang.permission_denied_for_this_item') . " - #$id");
                             }

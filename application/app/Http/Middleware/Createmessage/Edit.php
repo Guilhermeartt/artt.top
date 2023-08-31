@@ -35,7 +35,7 @@ class Edit {
 
         //permission: does user have permission edit createmessages
         if (auth()->user()->is_team) {
-            if (auth()->user()->role->role_createmessages >= 2) {
+            if (auth()->user()->role->role_createmessage >= 2) {
                 return $next($request);
             }
         }
