@@ -3608,7 +3608,7 @@ When click on sidebar toggler and also for tablet
     width: 220px;
     padding-bottom: 10px;
     z-index: 1001;
-    background: #edf0f5;
+    background: #002b42;
     display: none;
     padding-left: 1px; }
     .mini-sidebar .sidebar-nav #sidebarnav > li > ul.position-top {
@@ -3664,7 +3664,7 @@ When click on sidebar toggler and also for tablet
     .mini-sidebar .sidebar-nav #sidebarnav > li.has-submenu:hover > a .label {
       display: none; }
   .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a {
-    background: #edf0f5; } }
+    background: #002b42; } }
 @media (max-width: 767px) {
   .mini-sidebar .left-sidebar {
     position: fixed; }
