@@ -3673,7 +3673,14 @@ When click on sidebar toggler and also for tablet
     left: -260px; }
   .mini-sidebar.show-sidebar .left-sidebar,
   .mini-sidebar.show-sidebar .sidebar-footer {
-    left: 0px !important; } }
+    left: 0px !important; } 
+
+ /**-------------------------------------------------------
+* tab body embedded content
+* -------------------------------------------------------*/
+.tab-body-embedded .table-stats-cards {
+  flex-direction: column;} 
+}
 /*============================================================== 
  For all pages 
  ============================================================== */
