@@ -35,7 +35,7 @@ class Edit {
 
         //permission: does user have permission edit listmessage
         if (auth()->user()->is_team) {
-            if (auth()->user()->role->role_listmessages >= 2) {
+            if (auth()->user()->role->role_listmessage >= 2) {
                 return $next($request);
             }
         }

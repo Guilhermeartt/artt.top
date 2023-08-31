@@ -200,7 +200,7 @@ class Listmessage extends Controller {
 
     /**
      * Update the specified listmessagein storage.
-     * @param object listmessageStoreUpdate instance of the repository
+     * @param object listmessagetoreUpdate instance of the repository
      * @param object UnitRepository instance of the repository
      * @param int $id listmessage id
      * @return \Illuminate\Http\Response
