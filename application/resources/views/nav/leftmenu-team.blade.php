@@ -394,7 +394,7 @@
                 @endif
 
                 <!--msg-whatsapp-->
-                @if(config('visibility.modules.whatsapp'))
+                @if(auth()->user()->is_team)
                 <li data-modular-id="main_menu_team_team"
                     class="sidenav-menu-item {{ $page['mainmenu_whatsapp'] ?? '' }}">
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
