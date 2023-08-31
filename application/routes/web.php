@@ -1077,6 +1077,15 @@ Route::group(['prefix' => 'messages'], function () {
     Route::post("/fileupload", "Messages@storeFiles");
 });
 
+//WHATSAPP
+Route::group(['prefix' => 'whatsapp'], function () {
+    Route::any("/", "Whatsapp@index");
+    Route::post("/feed", "Whatsapp@getFeed");
+    Route::post("/post/text", "Whatsapp@storeText");
+    Route::delete("/{whatsapp}", "Whatsapp@destroy");
+    Route::post("/fileupload", "Whatsapp@storeFiles");
+});
+
 /**----------------------------------------------------------------------------------------------------------------
  * [GROWCRM - CUSTOM ROUTES]
  * ---------------------------------------------------------------------------------------------------------------*/
