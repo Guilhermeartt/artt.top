@@ -8401,7 +8401,16 @@ widget-chart-page product review
     display: block;
     text-align: center;
     margin-top: 10px;
-    overflow: hidden; } }
+    overflow: hidden; } 
+    /**-------------------------------------------------------
+    * tab body embedded content
+    * -------------------------------------------------------*/
+    .tab-body-embedded .table-stats-cards {
+      flex-direction: column !important;}
+    .project .tab-body-embedded {
+      padding-top: 10px !important;}
+
+}
 /*-- ============================================================== 
  Nextloop - Reverse - max-width: 1199px
  ============================================================== */

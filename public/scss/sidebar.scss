@@ -301,14 +301,7 @@ When click on sidebar toggler and also for tablet
 }
 
 @media(max-width:767px) {
-    /**-------------------------------------------------------
-    * tab body embedded content
-    * -------------------------------------------------------*/
-    .tab-body-embedded .table-stats-cards {
-      flex-direction: column !important;}
-    .project .tab-body-embedded {
-      padding-top: 10px !important;}
-    }
+
     .mini-sidebar {
         .left-sidebar {
             position: fixed;
