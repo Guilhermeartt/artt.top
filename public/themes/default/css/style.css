@@ -8408,7 +8408,9 @@ widget-chart-page product review
     .tab-body-embedded .table-stats-cards {
       flex-direction: column !important;}
     .project .tab-body-embedded {
-      padding-top: 10px !important;}
+      padding-top: 10px !important;
+      padding-left: 25px !important;
+      padding-right: 25px !important;}
 
 }
 /*-- ============================================================== 
