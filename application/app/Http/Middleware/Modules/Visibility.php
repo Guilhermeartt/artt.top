@@ -389,7 +389,7 @@ class Visibility {
      */
     public function viewWhatsapp() {
 
-        //team
+        //whatsapp
         if (auth()->user()->is_team) {
             if (auth()->user()->role->role_whatsapp >= 1) {
                 config(['visibility.modules.whatsapp' => true]);
