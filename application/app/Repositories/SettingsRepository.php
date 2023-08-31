@@ -715,8 +715,7 @@ class SettingsRepository {
         $settings->settings_modules_proposals = (request('settings_modules_proposals') == 'on') ? 'enabled' : 'disabled';
         $settings->settings_modules_contracts = (request('settings_modules_contracts') == 'on') ? 'enabled' : 'disabled';
         $settings->settings_modules_messages = (request('settings_modules_messages') == 'on') ? 'enabled' : 'disabled';
-        $settings->settings_modules_whatsapps = (request('settings_modules_whatsapp') == 'on') ? 'enabled' : 'disabled';
-
+        $settings->settings_modules_whatsapp = (request('settings_modules_whatsapp') == 'on') ? 'enabled' : 'disabled';
         //$settings->settings_modules_spaces = (request('settings_modules_spaces') == 'on') ? 'enabled' : 'disabled';
 
         //save
