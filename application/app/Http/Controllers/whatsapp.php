@@ -10,19 +10,19 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Responses\Createmessage\CreateResponse;
-use App\Http\Responses\Createmessage\DestroyResponse;
-use App\Http\Responses\Createmessage\EditResponse;
-use App\Http\Responses\Createmessage\IndexResponse;
-use App\Http\Responses\Createmessage\StoreResponse;
-use App\Http\Responses\Createmessage\UpdateResponse;
+use App\Http\Responses\Whatsapp\CreateResponse;
+use App\Http\Responses\Whatsapp\DestroyResponse;
+use App\Http\Responses\Whatsapp\EditResponse;
+use App\Http\Responses\Whatsapp\IndexResponse;
+use App\Http\Responses\Whatsapp\StoreResponse;
+use App\Http\Responses\Whatsapp\UpdateResponse;
 use App\Permissions\TaskPermissions;
 use App\Repositories\TimerRepository;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Validator;
 
-class Createmessage extends Controller {
+class Whatsapp extends Controller {
 
     /**
      * The timesheet repository instance.
@@ -37,15 +37,15 @@ class Createmessage extends Controller {
         //authenticated
         $this->middleware('auth');
 
-        $this->middleware('createmessageMiddlewareIndex')->only([
+        $this->middleware('whatsappMiddlewareIndex')->only([
             'index',
             'update',
             'store',
         ]);
-        $this->middleware('createmessageMiddlewareEdit')->only([
+        $this->middleware('whatsappMiddlewareEdit')->only([
             'update',
         ]);
-        $this->middleware('createmessageMiddlewareDestroy')->only([
+        $this->middleware('whatsappMiddlewareDestroy')->only([
             'destroy',
         ]);
 
@@ -53,7 +53,7 @@ class Createmessage extends Controller {
     }
 
     /**
-     * Display a listing of createmessage
+     * Display a listing of whatsapp
      * @return \Illuminate\Http\Response
      */
     public function index() {
@@ -63,13 +63,13 @@ class Createmessage extends Controller {
             'filter_timer_status' => 'stopped',
         ]);
 
-        //get createmessage
-        $createmessage = $this->timerrepo->search();
+        //get whatsapp
+        $whatsapp = $this->timerrepo->search();
 
         //reponse payload
         $payload = [
-            'page' => $this->pageSettings('createmessage'),
-            'createmessage' => $createmessage,
+            'page' => $this->pageSettings('whatsapp'),
+            'whatsapp' => $whatsapp,
         ];
 
         //show the view
@@ -161,15 +161,15 @@ class Createmessage extends Controller {
                 'filter_timer_creatorid' => auth()->id(),
             ]);
         }
-        $createmessage = $this->timerrepo->search();
-        $count = $createmessage->total();
+        $whatsapp = $this->timerrepo->search();
+        $count = $whatsapp->total();
 
         //get refreshed timesheet
-        $createmessage = $this->timerrepo->search($timer->timer_id);
+        $whatsapp = $this->timerrepo->search($timer->timer_id);
 
         //reponse payload
         $payload = [
-            'createmessage' => $createmessage,
+            'whatsapp' => $whatsapp,
             'count' => $count,
         ];
 
@@ -228,11 +228,11 @@ class Createmessage extends Controller {
         $timer->save();
 
         //get updates
-        $createmessage = $this->timerrepo->search($id);
+        $whatsapp = $this->timerrepo->search($id);
 
         //reponse payload
         $payload = [
-            'createmessage' => $createmessage,
+            'whatsapp' => $whatsapp,
         ];
 
         //generate a response
@@ -277,27 +277,27 @@ class Createmessage extends Controller {
         //common settings
         $page = [
             'crumbs' => [
-                __('lang.createmessage'),
+                __('lang.whatsapp'),
             ],
             'crumbs_special_class' => 'list-pages-crumbs',
-            'page' => 'createmessage',
+            'page' => 'whatsapp',
             'no_results_message' => __('lang.no_results_found'),
-            'mainmenu_createmessage' => 'active',
+            'mainmenu_whatsapp' => 'active',
             'mainmenu_sales' => 'active',
-            'submenu_createmessage' => 'active',
-            'sidepanel_id' => 'sidepanel-filter-createmessage',
-            'dynamic_search_url' => url('createmessage/search?action=search&timesheetresource_id=' . request('timesheetresource_id') . '&timesheetresource_type=' . request('timesheetresource_type')),
+            'submenu_whatsapp' => 'active',
+            'sidepanel_id' => 'sidepanel-filter-whatsapp',
+            'dynamic_search_url' => url('whatsapp/search?action=search&timesheetresource_id=' . request('timesheetresource_id') . '&timesheetresource_type=' . request('timesheetresource_type')),
             'add_button_classes' => '',
             'add_button_classes' => 'add-edit-item-button',
-            'load_more_button_route' => 'createmessage',
+            'load_more_button_route' => 'whatsapp',
             'source' => 'list',
         ];
 
         //default modal settings (modify for sepecif sections)
         $page += [
             'add_modal_title' => __('lang.record_your_work_time'),
-            'add_modal_create_url' => url('createmessage/create'),
-            'add_modal_action_url' => url('createmessage'),
+            'add_modal_create_url' => url('whatsapp/create'),
+            'add_modal_action_url' => url('whatsapp'),
             'add_modal_action_ajax_class' => '',
             'add_modal_size' => 'modal-sm',
             'add_modal_action_ajax_loading_target' => 'commonModalBody',
@@ -305,10 +305,10 @@ class Createmessage extends Controller {
         ];
 
         //projects list page
-        if ($section == 'createmessage') {
+        if ($section == 'whatsapp') {
             $page += [
-                'meta_title' => __('lang.createmessage'),
-                'heading' => __('lang.createmessage'),
+                'meta_title' => __('lang.whatsapp'),
+                'heading' => __('lang.whatsapp'),
 
             ];
             if (request('source') == 'ext') {
