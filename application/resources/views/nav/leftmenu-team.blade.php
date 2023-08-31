@@ -394,7 +394,18 @@
                 @endif
 
                 <!--msg-whatsapp-->
-                @if(auth()->user()->is_admin && config('visibility.modules.whatsapp'))
+                @if(config('visibility.modules.messages'))
+                <li data-modular-id="main_menu_team_messages"
+                    class="sidenav-menu-item {{ $page['mainmenu_messages'] ?? '' }} menu-tooltip menu-with-tooltip"
+                    title="{{ cleanLang(__('lang.messages')) }}">
+                    <a class="waves-effect waves-dark p-r-20" href="/messages" aria-expanded="false" target="_self">
+                        <i class="sl-icon-bubbles"></i>
+                        <span class="hide-menu">{{ cleanLang(__('lang.messages')) }}
+                        </span>
+                    </a>
+                </li>
+                @endif
+                @if(config('visibility.modules.whatsapp'))
                 <li data-modular-id="main_menu_team_whatsapp"
                     class="sidenav-menu-item {{ $page['mainmenu_whatsapp'] ?? '' }}">
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
