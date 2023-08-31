@@ -413,7 +413,7 @@
                         <li class="sidenav-submenu mainmenu_listmessage {{ $page['submenu_listmessage'] ?? '' }}"
                             id="submenu_listmessage">
                             <a href="/listmessage"
-                                class="{{ $page['submenu_listmessage'] ?? '' }}">{{ cleanLang(__('lang.listmessage')) }}</a>
+                                class="{{ $page['submenu_listmessage'] ?? '' }}">{{ cleanLang(__('lang.listmessages')) }}</a>
                         </li>
                         @endif
                     </ul>

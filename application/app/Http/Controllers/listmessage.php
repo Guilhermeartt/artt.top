@@ -25,7 +25,7 @@ use Validator;
 class Listmessage extends Controller {
 
     /**
-     * The timesheet repository instance.
+     * The listmessage repository instance.
      */
     protected $timerrepo;
 
@@ -164,7 +164,7 @@ class Listmessage extends Controller {
         $listmessage = $this->timerrepo->search();
         $count = $listmessage->total();
 
-        //get refreshed timesheet
+        //get refreshed listmessage
         $listmessage = $this->timerrepo->search($timer->timer_id);
 
         //reponse payload
@@ -178,9 +178,9 @@ class Listmessage extends Controller {
     }
 
     /**
-     * Show the form for editing the specified timesheet
+     * Show the form for editing the specified listmessage
      * @param object CategoryRepository instance of the repository
-     * @param int $id timesheet id
+     * @param int $id listmessage id
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
@@ -199,10 +199,10 @@ class Listmessage extends Controller {
     }
 
     /**
-     * Update the specified timesheetin storage.
-     * @param object timesheetStoreUpdate instance of the repository
+     * Update the specified listmessagein storage.
+     * @param object listmessageStoreUpdate instance of the repository
      * @param object UnitRepository instance of the repository
-     * @param int $id timesheet id
+     * @param int $id listmessage id
      * @return \Illuminate\Http\Response
      */
     public function update($id) {
@@ -277,7 +277,7 @@ class Listmessage extends Controller {
         //common settings
         $page = [
             'crumbs' => [
-                __('lang.listmessage'),
+                __('lang.listmessages'),
             ],
             'crumbs_special_class' => 'list-pages-crumbs',
             'page' => 'listmessage',
@@ -286,7 +286,7 @@ class Listmessage extends Controller {
             'mainmenu_sales' => 'active',
             'submenu_listmessage' => 'active',
             'sidepanel_id' => 'sidepanel-filter-listmessage',
-            'dynamic_search_url' => url('listmessage/search?action=search&timesheetresource_id=' . request('timesheetresource_id') . '&timesheetresource_type=' . request('timesheetresource_type')),
+            'dynamic_search_url' => url('listmessage/search?action=search&listmessageresource_id=' . request('listmessageresource_id') . '&listmessageresource_type=' . request('listmessageresource_type')),
             'add_button_classes' => '',
             'add_button_classes' => 'add-edit-item-button',
             'load_more_button_route' => 'listmessage',
@@ -307,8 +307,8 @@ class Listmessage extends Controller {
         //projects list page
         if ($section == 'listmessage') {
             $page += [
-                'meta_title' => __('lang.listmessage'),
-                'heading' => __('lang.listmessage'),
+                'meta_title' => __('lang.listmessages'),
+                'heading' => __('lang.listmessages'),
 
             ];
             if (request('source') == 'ext') {
