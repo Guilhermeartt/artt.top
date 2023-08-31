@@ -378,15 +378,6 @@ class Visibility {
         //team
         if (auth()->user()->is_team) {
             if (auth()->user()->role->role_listmessage >= 1) {
-                if (config('modules.timetracking')) {
-                    config(['visibility.modules.listmessage' => true]);
-                }
-            }
-        }
-
-        //client
-        if (auth()->user()->is_client) {
-            if (config('modules.timetracking')) {
                 config(['visibility.modules.listmessage' => true]);
             }
         }

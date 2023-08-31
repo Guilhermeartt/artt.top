@@ -45,6 +45,7 @@ class Status {
             'reminders' => 'settings_modules_reminders',
             'spaces' => 'settings_modules_spaces',
             'messages' => 'settings_modules_messages',
+            'whatsapp' => 'settings_modules_whatsapp',
         ];
 
         //set theglobal visibility of each module
