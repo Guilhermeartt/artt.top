@@ -398,7 +398,7 @@
                 <li data-modular-id="main_menu_team_team"
                     class="sidenav-menu-item {{ $page['mainmenu_settings'] ?? '' }}">
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
-                        <i class="ti-panel"></i>
+                        <i class="ti-mobile"></i>
                         <span class="hide-menu">{{ cleanLang(__('lang.whatsapp')) }}
                         </span>
                     </a>

@@ -44,6 +44,8 @@ class Visibility {
         $this->viewKnowledgebase();
         $this->viewTeam();
         $this->viewTimesheets();
+        $this->viewCreatemessage();
+        $this->viewListmessage();
         $this->viewTimetracking();
         $this->viewReminders();
         $this->viewProposals();
@@ -354,6 +356,43 @@ class Visibility {
             }
         }
     }
+
+   /**
+     * visibility of the createmessage feature [createmessage]
+     */
+    public function viewCreatemessage() {
+
+        //createmessage
+        if (auth()->user()->is_createmessage) {
+            if (auth()->user()->role->role_createmessage >= 1) {
+                config(['visibility.modules.createmessage' => true]);
+            }
+        }
+    }
+
+    /**
+     * visibility of the listmessage feature [listmessage]
+     */
+    public function viewListmessage() {
+
+        //team
+        if (auth()->user()->is_team) {
+            if (auth()->user()->role->role_listmessage >= 1) {
+                if (config('modules.timetracking')) {
+                    config(['visibility.modules.listmessage' => true]);
+                }
+            }
+        }
+
+        //client
+        if (auth()->user()->is_client) {
+            if (config('modules.timetracking')) {
+                config(['visibility.modules.listmessage' => true]);
+            }
+        }
+    }
+
+
 
     /**
      * visibility of the time tracking (timers) feature [team]
