@@ -2061,6 +2061,6 @@ return [
 'clear_filter' => "Filtro limpo",
 'whatsapp' => "Whatsapp",
 'createmessage' => "Criar Mensagem",
-'listmessage' => "Lista de Mensagens",
+'listmessages' => "Lista de Mensagens",
 
 ];
