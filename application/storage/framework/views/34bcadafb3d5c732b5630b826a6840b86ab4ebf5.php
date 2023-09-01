@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('settings-page'); ?>
 <!--settings-->
 <div class="table-responsive">
@@ -271,6 +270,21 @@
 
                                     class="filled-in chk-col-light-blue">
                                 <label class="m-0 p-0" for="settings_modules_reminders"></label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                 <!--Whatsapp-->
+                 <tr>
+                    <td><?php echo app('translator')->get('lang.whatsapp'); ?></td>
+                    <td>
+                        <div class="form-group form-group-checkbox m-0 p-0">
+                            <div class="col-2 text-right m-0 p-0">
+                                <input type="checkbox" id="settings_modules_whatsapp" name="settings_modules_whatsapp"
+                                    <?php echo e(runtimePrechecked($settings->settings_modules_whatsapp)); ?>
+
+                                    class="filled-in chk-col-light-blue">
+                                <label class="m-0 p-0" for="settings_modules_whatsapp"></label>
                             </div>
                         </div>
                     </td>

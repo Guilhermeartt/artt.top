@@ -39,4 +39,4 @@
 <?php endif; ?>
 
 </html>
-<?php /**PATH /home3/arttto74/artt.top/application/resources/views/layout/wrapperplain.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/guilherme.artt/Sites/localhost/artt.top/application/resources/views/layout/wrapperplain.blade.php ENDPATH**/ ?>

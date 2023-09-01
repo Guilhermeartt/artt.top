@@ -262,3 +262,26 @@
 #33 /home3/arttto74/artt.top/application/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #34 {main}
 "} 
+[2023-08-31 15:28:46] production.ERROR: Carbon\Carbon::setLastErrors(): Argument #1 ($lastErrors) must be of type array, bool given, called in /home3/arttto74/artt.top/application/vendor/nesbot/carbon/src/Carbon/Traits/Creator.php on line 98 {"exception":"[object] (TypeError(code: 0): Carbon\\Carbon::setLastErrors(): Argument #1 ($lastErrors) must be of type array, bool given, called in /home3/arttto74/artt.top/application/vendor/nesbot/carbon/src/Carbon/Traits/Creator.php on line 98 at /home3/arttto74/artt.top/application/vendor/nesbot/carbon/src/Carbon/Traits/Creator.php:928)
+[stacktrace]
+#0 /home3/arttto74/artt.top/application/vendor/nesbot/carbon/src/Carbon/Traits/Creator.php(98): Carbon\\Carbon::setLastErrors(false)
+#1 /home3/arttto74/artt.top/application/vendor/nesbot/carbon/src/Carbon/Traits/Creator.php(185): Carbon\\Carbon->__construct('2023-08-31', NULL)
+#2 /home3/arttto74/artt.top/application/vendor/nesbot/carbon/src/Carbon/Traits/Creator.php(216): Carbon\\Carbon::rawParse('2023-08-31', NULL)
+#3 /home3/arttto74/artt.top/application/app/Helpers.php(787): Carbon\\Carbon::parse('2023-08-31')
+#4 /home3/arttto74/artt.top/application/app/Providers/ConfigMailServiceProvider.php(54): runtimeDate('2023-08-31')
+#5 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\ConfigMailServiceProvider->boot()
+#6 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(924): Illuminate\\Container\\Container->call(Array)
+#11 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\ConfigMailServiceProvider))
+#12 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\ConfigMailServiceProvider), 34)
+#13 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(904): array_walk(Array, Object(Closure))
+#14 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#15 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#16 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#17 /home3/arttto74/artt.top/application/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#18 /home3/arttto74/artt.top/application/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 {main}
+"} 

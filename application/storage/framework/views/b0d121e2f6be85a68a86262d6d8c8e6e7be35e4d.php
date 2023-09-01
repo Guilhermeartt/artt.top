@@ -430,4 +430,4 @@
     </div>
     <!-- End Sidebar scroll-->
 </aside>
-<?php /**PATH /home3/arttto74/artt.top/application/resources/views/nav/leftmenu-team.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/guilherme.artt/Sites/localhost/artt.top/application/resources/views/nav/leftmenu-team.blade.php ENDPATH**/ ?>

@@ -695,6 +695,7 @@
                     </ul>
                 </li>
                 <?php endif; ?>
+                
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
