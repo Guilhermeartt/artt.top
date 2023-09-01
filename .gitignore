@@ -1,1 +1,8 @@
+<<<<<<< Updated upstream
 **DS_Store
+=======
+**DS_Store
+**.htacecess
+application/yarn.lock
+application/webpack.mix.js
+>>>>>>> Stashed changes
